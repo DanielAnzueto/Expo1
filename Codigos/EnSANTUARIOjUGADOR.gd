@@ -44,3 +44,9 @@ func animations(direction):
 			animationPlayer.play("JUMP_SinEspada")
 		elif velocity.y>0:
 			animationPlayer.play("Fall_SinEspada")
+			
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("move_down") and is_on_floor():
+		position.y +=1.5
+		
