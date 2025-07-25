@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://kr8pdc0cwl6w"]
+
+[ext_resource type="Script" uid="uid://d4duo58t8kfcc" path="res://Codigos/enemigo_1.gd" id="1_2lvwu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_74f6h"]
+load_path = "res://.godot/imported/walk-1.png-880a3eb92358ba477faa11bdedfb0bd8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_getyv"]
+load_path = "res://.godot/imported/walk-2.png-b914ea1865a70cadb3543ecca9f00d97.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y4kpa"]
+load_path = "res://.godot/imported/walk-3.png-d20190898dee4b7270e059a411c10222.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vab0d"]
+load_path = "res://.godot/imported/walk-4.png-4b7b5783dea82951988ac70c0fd7eec3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yfojm"]
+load_path = "res://.godot/imported/walk-5.png-b83b9c5de3244a1ce3256f792dbf14a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dqtu2"]
+load_path = "res://.godot/imported/walk-6.png-90316dfbd1934afdd5c2997301cad27d.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xx017"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_74f6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_getyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_y4kpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_vab0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_yfojm")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_dqtu2")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2sae"]
+size = Vector2(29, 57.3)
+
+[node name="ENEMIGO_1" type="CharacterBody2D"]
+script = ExtResource("1_2lvwu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xx017")
+animation = &"Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16.5, 18.65)
+shape = SubResource("RectangleShape2D_o2sae")
+
+[node name="RAYOS" type="Node2D" parent="."]
+position = Vector2(-17, -3)
+
+[node name="RayCast2D" type="RayCast2D" parent="RAYOS"]
+target_position = Vector2(60, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="RAYOS"]
+target_position = Vector2(-60, 0)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://chiolhpvmb2ap"]
+
+[ext_resource type="Script" uid="uid://0gdagvy2gxe7" path="res://Codigos/malo.gd" id="1_4woom"]
+[ext_resource type="Texture2D" uid="uid://clkkb5eijubr4" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 01.png" id="2_7788n"]
+[ext_resource type="Texture2D" uid="uid://c8cnnfc0regu2" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 02.png" id="3_3it05"]
+[ext_resource type="Texture2D" uid="uid://ccj2hu2bu1the" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 03.png" id="4_xso6q"]
+[ext_resource type="Texture2D" uid="uid://bqwxds86um8da" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 04.png" id="5_ihcwo"]
+[ext_resource type="Texture2D" uid="uid://cvliveyb2y8g5" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 05.png" id="6_4vsoe"]
+[ext_resource type="Texture2D" uid="uid://bt8i0ns765g66" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 06.png" id="7_jbabh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4hwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7788n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3it05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xso6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ihcwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4vsoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jbabh")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkkdu"]
+size = Vector2(25, 24)
+
+[node name="ESQUELETO_malo" type="CharacterBody2D"]
+script = ExtResource("1_4woom")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g4hwp")
+animation = &"run"
+frame_progress = 0.57006
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hkkdu")

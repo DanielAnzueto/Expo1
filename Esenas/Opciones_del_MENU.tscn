@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://xxyqtfxoovyf"]
+
+[ext_resource type="Script" uid="uid://clm4ticf2b1mf" path="res://Codigos/opciones_del_menu.gd" id="1_dfqwl"]
+[ext_resource type="Texture2D" uid="uid://bf15hxl7o8dka" path="res://Esenas/MENU-IMAGEN/AAAAAAAAAAA.PNG" id="2_dfqwl"]
+[ext_resource type="AudioStream" uid="uid://dislang0eabfg" path="res://Asets/SONIDOS/AUDIOS.MENU/ForestMENU.ogg" id="3_m5emm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj3jf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkm5f"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ois5e"]
+bg_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+
+[node name="opciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dfqwl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.207177, 0.230598, 0.310574, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dfqwl")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = -154.0
+offset_right = -16.0
+offset_bottom = 61.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="OPCIONES" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_oj3jf")
+text = "OPCIONES
+"
+
+[node name="CREDITOS" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jkm5f")
+text = "CREDITOS"
+
+[node name="ATRAS" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ois5e")
+text = "ATRAS
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m5emm")
+volume_db = -6.67
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/OPCIONES" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/OPCIONES" to="." method="_on_juagr_pressed"]
+[connection signal="pressed" from="VBoxContainer/CREDITOS" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/CREDITOS" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/ATRAS" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="VBoxContainer/ATRAS" to="." method="_on_atras_pressed"]

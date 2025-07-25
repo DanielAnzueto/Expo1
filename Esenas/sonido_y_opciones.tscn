@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://chumna1v1qx4k"]
+
+[ext_resource type="Texture2D" uid="uid://t84wy24voytp" path="res://Esenas/Una persona con pantalones verdes y camisa gris corriendo mientras edificios se derrumban a su alrededor, ambiente postapocalu00edptico con estilo cinemu00e1tico..png" id="1_bpxu1"]
+[ext_resource type="Script" uid="uid://ck6sp2amqs1tg" path="res://Codigos/sonido_y_opciones.gd" id="1_s1qaj"]
+[ext_resource type="AudioStream" uid="uid://dislang0eabfg" path="res://Asets/SONIDOS/AUDIOS.MENU/ForestMENU.ogg" id="3_aqofg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srl53"]
+bg_color = Color(0.0588235, 0.211765, 0.0705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1qaj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqofg"]
+bg_color = Color(0.560976, 0.63671, 0.390286, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fpeg"]
+bg_color = Color(0.41758, 0.651445, 0.627613, 1)
+
+[node name="SONIDO Y OPCIONES" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s1qaj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.289673, 0.0829333, 0.063387, 0.243137)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bpxu1")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -104.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pausar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_srl53")
+text = "Pausar el juego
+\"ESC\""
+
+[node name="HISTORIA" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_s1qaj")
+text = "HISTORIA"
+
+[node name="ATRAS" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_aqofg")
+text = "ATRAS"
+
+[node name="creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_7fpeg")
+text = "Creado por Daniel Anzueto, Kenny Alvarez y Manuel Barquin."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aqofg")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/HISTORIA" to="." method="_on_historia_pressed"]
+[connection signal="pressed" from="VBoxContainer/ATRAS" to="." method="_on_atras_pressed"]

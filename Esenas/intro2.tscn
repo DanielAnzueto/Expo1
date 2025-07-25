@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://qjg3c5mf6hl5"]
+
+[ext_resource type="Script" uid="uid://b6dik8y4mqtuj" path="res://Codigos/intro_2.gd" id="1_c1cgd"]
+[ext_resource type="Texture2D" uid="uid://da1c8p0wlejdj" path="res://Asets/COSITAS/222222222222.png" id="2_abt0u"]
+[ext_resource type="AudioStream" uid="uid://dislang0eabfg" path="res://Asets/SONIDOS/AUDIOS.MENU/ForestMENU.ogg" id="2_c1cgd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abt0u"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1cgd"]
+bg_color = Color(0.443137, 0.533333, 0.564706, 1)
+border_color = Color(0.550429, 0.231412, 0.0254427, 1)
+corner_detail = 17
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c1cgd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.207177, 0.230598, 0.310574, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_abt0u")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = 108.0
+offset_right = -7.0
+offset_bottom = 323.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SIEGUINTE" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_abt0u")
+text = "Proximo"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c1cgd")
+volume_db = -6.67
+autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -454.0
+offset_top = -124.0
+offset_right = 458.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_c1cgd")
+text = "\"Pero el descuido, la basura y la ambición lo cambiaron todo...\"
+"
+
+[connection signal="pressed" from="VBoxContainer/SIEGUINTE" to="." method="_on_sieguinte_pressed"]

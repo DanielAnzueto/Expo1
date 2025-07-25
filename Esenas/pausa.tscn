@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvgauk00l7jid"]
+
+[ext_resource type="Script" uid="uid://ce2naq8kicu2q" path="res://Codigos/pausa.gd" id="1_xa00a"]
+[ext_resource type="FontFile" uid="uid://crbwq2esyrd1m" path="res://Asets/TEXTOS/poxel-font.ttf" id="2_5833b"]
+[ext_resource type="AudioStream" uid="uid://c6jfwg127nbm7" path="res://Asets/SONIDOS/AUDIOS.MENU/patear-tacho-de-basura-81334.mp3" id="3_uuase"]
+
+[node name="PAUSA" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_xa00a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.235294)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -11.5
+offset_right = 26.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5833b")
+theme_override_font_sizes/font_size = 34
+text = "PAUSA"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uuase")

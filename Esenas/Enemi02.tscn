@@ -1,0 +1,107 @@
+[gd_scene load_steps=19 format=3 uid="uid://bkm7v43u2yyow"]
+
+[ext_resource type="Script" uid="uid://bb6xl01fh2obc" path="res://Codigos/character_body_2d_2.gd" id="1_mn2h5"]
+[ext_resource type="Texture2D" uid="uid://d2dja23mdkqyn" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/07-Attack/Attack 01.png" id="8_jrwl1"]
+[ext_resource type="Texture2D" uid="uid://dy6cpl2usxav7" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/07-Attack/Attack 02.png" id="9_b8plj"]
+[ext_resource type="Texture2D" uid="uid://bbf4gmtxwtoey" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/07-Attack/Attack 03.png" id="10_fvadv"]
+[ext_resource type="Texture2D" uid="uid://cvgd0e0wpenmm" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/07-Attack/Attack 04.png" id="11_6t7lr"]
+[ext_resource type="Texture2D" uid="uid://dl017oeruol3c" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/07-Attack/Attack 05.png" id="12_dl47s"]
+[ext_resource type="Texture2D" uid="uid://clkkb5eijubr4" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 01.png" id="13_jwkgw"]
+[ext_resource type="Texture2D" uid="uid://wrg8lyoyie30" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/09-Dead Hit/Dead Hit 01.png" id="13_n6e4k"]
+[ext_resource type="Texture2D" uid="uid://bs5brx8g16hfj" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/09-Dead Hit/Dead Hit 02.png" id="14_th5fa"]
+[ext_resource type="Texture2D" uid="uid://c8cnnfc0regu2" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 02.png" id="14_uyjhh"]
+[ext_resource type="Texture2D" uid="uid://ccj2hu2bu1the" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 03.png" id="15_ddaqd"]
+[ext_resource type="Texture2D" uid="uid://deujpqtjsw7p0" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/09-Dead Hit/Dead Hit 03.png" id="15_kcdna"]
+[ext_resource type="Texture2D" uid="uid://bqwxds86um8da" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 04.png" id="16_5afbq"]
+[ext_resource type="Texture2D" uid="uid://c73ra0qyygwtr" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/09-Dead Hit/Dead Hit 04.png" id="16_f6knq"]
+[ext_resource type="Texture2D" uid="uid://cvliveyb2y8g5" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 05.png" id="17_yst7a"]
+[ext_resource type="Texture2D" uid="uid://bt8i0ns765g66" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 06.png" id="18_oojvf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kytxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jrwl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b8plj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fvadv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6t7lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dl47s")
+}],
+"loop": true,
+"name": &"ATACAR",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_jwkgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uyjhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ddaqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5afbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yst7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oojvf")
+}],
+"loop": true,
+"name": &"CORRER",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_n6e4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_th5fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kcdna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_f6knq")
+}],
+"loop": true,
+"name": &"Muerte",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7kca"]
+size = Vector2(20, 21)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." groups=["Malo_1"]]
+position = Vector2(610, -8)
+script = ExtResource("1_mn2h5")
+
+[node name="AnimatedSprite2Ds" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+position = Vector2(1, 10)
+sprite_frames = SubResource("SpriteFrames_kytxb")
+animation = &"CORRER"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(2, 11.5)
+shape = SubResource("RectangleShape2D_e7kca")
+
+[node name="IZQUIERDA" type="RayCast2D" parent="CharacterBody2D2"]
+position = Vector2(-8, 11)
+target_position = Vector2(-100, 0)
+
+[node name="DERECHA" type="RayCast2D" parent="CharacterBody2D2"]
+position = Vector2(12, 11)
+target_position = Vector2(100, 0)

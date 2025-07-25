@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl2xf0alqkcwg"]
+
+[ext_resource type="Script" uid="uid://cquief2lk32c6" path="res://Codigos/visible_vida_u_iplayer.gd" id="1_7w55m"]
+[ext_resource type="Texture2D" uid="uid://f6jlvm2ya2yy" path="res://Asets/Fondo1/Objetos/findo.png" id="2_yxv71"]
+[ext_resource type="FontFile" uid="uid://crbwq2esyrd1m" path="res://Asets/TEXTOS/poxel-font.ttf" id="3_tq6br"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bipf1"]
+bg_color = Color(0, 0, 0, 0.364706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w55m"]
+bg_color = Color(0.713726, 0.172549, 0.176471, 0.811765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxv71"]
+bg_color = Color(0.454902, 0.686275, 0.294118, 1)
+
+[node name="VisibleVida_UIplayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7w55m")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 294.0
+offset_bottom = 52.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bipf1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7w55m")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 66.0
+offset_right = 165.0
+offset_bottom = 141.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxv71")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 59.0
+offset_right = 209.0
+offset_bottom = 142.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_yxv71")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.355482, 0.820929, 0.239956, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_tq6br")
+theme_override_font_sizes/font_size = 62
+text = "0"
+vertical_alignment = 1
