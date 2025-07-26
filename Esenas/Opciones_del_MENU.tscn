@@ -81,8 +81,8 @@ stream = ExtResource("3_m5emm")
 volume_db = -6.67
 autoplay = true
 
-[connection signal="pressed" from="VBoxContainer/OPCIONES" to="." method="_on_juagr_pressed"]
 [connection signal="pressed" from="VBoxContainer/OPCIONES" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/OPCIONES" to="." method="_on_juagr_pressed"]
 [connection signal="pressed" from="VBoxContainer/CREDITOS" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="VBoxContainer/CREDITOS" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="VBoxContainer/ATRAS" to="." method="_on_salir_pressed"]

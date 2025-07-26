@@ -54,11 +54,11 @@ offset_right = 564.0
 offset_bottom = 127.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "Hace cien años, una civilización avanzada creó una bomba para controlar la energía de la Tierra.
- Pero la bomba falló: 
-el impacto destruyó el equilibrio del planeta. Los bosques se marchitaron, 
-los mares se envenenaron y las ciudades se convirtieron en ruinas."
+theme_override_font_sizes/font_size = 36
+text = "Kael viaja por un mundo en ruinas,
+ buscando salvar lo que queda de la naturaleza…
+ y encontrar a su hermana Lyra era la esperanza del bosque. 
+Ahora, solo quedan ecos y una última oportunidad de restaurar la vida."
 
 [node name="ATRAS" type="Button" parent="TextureRect"]
 layout_mode = 1

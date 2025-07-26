@@ -122,7 +122,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_h5xu2")
 theme_override_font_sizes/font_size = 70
-text = "Game Over"
+text = "Te haz contaminado"
 
 [node name="TexturePERSONAJEMUERTE" type="TextureRect" parent="."]
 layout_mode = 1
@@ -161,7 +161,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_h5xu2")
 theme_override_font_sizes/font_size = 50
-text = "Retry"
+text = "Reaparecer"
 script = ExtResource("3_t53dc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
