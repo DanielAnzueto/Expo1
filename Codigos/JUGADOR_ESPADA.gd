@@ -11,6 +11,10 @@ var DASHHdirection:int
 var ATACAR:bool=false
 var push_force=10
 
+
+var rolingg=false
+
+
 @onready var animationPlayer=$AnimationPlayer
 @onready var sprite2d=$Sprite2D
 @onready var ESPADA=$AudioStreamPlayer
@@ -27,6 +31,13 @@ const Max_wall_slide_speed=120
 var is_in_dash :bool=false
 ##atacar
 var is_atack :bool=false
+
+
+
+func _process(delta: float) -> void:
+	print(rolingg)
+
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -59,11 +70,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		
+		if Input.is_action_just_pressed("Roling"):
+			roling()
+		elif Input.is_action_just_released("Roling"):
+			stand()
 		
 	if position.y > 293:
-		get_tree().change_scene_to_file("res://Esenas/GameOver.tscn")
+		get_tree().change_scene_to_file("res://Esenas/GameOverDenuevo.tscn")
 			
-		
+	
+	
 	move_and_slide()
 	
 	animations(direction)
@@ -78,7 +94,10 @@ func animations(direction):
 		if direction==0:
 			animationPlayer.play("IDLE_ESPADA")
 		else:
-			animationPlayer.play("CORRER_ESPADA")
+			if rolingg:
+				animationPlayer.play("roling")
+			else:
+				animationPlayer.play("CORRER_ESPADA")
 	else:
 		if velocity.y<0:
 			animationPlayer.play("JUMP_ESPADA")
@@ -92,3 +111,19 @@ func _input(event: InputEvent) -> void:
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	area.get_parent().get_parent().queue_free()
+	
+	
+
+func roling():
+	if rolingg:
+		return
+	rolingg=true
+	
+func stand():
+	if rolingg==false:
+		return
+	rolingg=false
+
+
+func _on_hi_tbox_enemigos_body_entered(body: Node2D) -> void:
+		body.get_parent().get_parent().queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://vay063wsrxl7"]
+[gd_scene load_steps=49 format=3 uid="uid://vay063wsrxl7"]
 
 [ext_resource type="Script" uid="uid://dgkc24ixja723" path="res://Codigos/Regresar_santuario.gd" id="1_qjspv"]
 [ext_resource type="Script" uid="uid://elrnsjurpc0n" path="res://Codigos/EnSANTUARIOjUGADOR.gd" id="2_q8lgh"]
@@ -2425,6 +2425,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35jku"]
 size = Vector2(16, 16.5)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_qi3wu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dd7my"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
@@ -2679,7 +2683,7 @@ script = ExtResource("1_qjspv")
 next_scene_path = "res://Esenas/INTRO_ESPADA.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TRANS_intro_espada"]
-position = Vector2(-1434, -26)
+position = Vector2(-5492, -156)
 shape = SubResource("RectangleShape2D_on8ak")
 debug_color = Color(0.455028, 0.456003, 0.980405, 0.42)
 
@@ -2701,7 +2705,7 @@ volume_db = -12.0
 autoplay = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(-13834, 397)
+position = Vector2(-10533, -486)
 script = ExtResource("2_q8lgh")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -2817,5 +2821,15 @@ offset_top = 305.0
 offset_right = -18049.0
 offset_bottom = 328.0
 text = "“Aquí... el aire es distinto. Casi puedo respirar recuerdos.”"
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2"]
+position = Vector2(-8104, 0)
+scale = Vector2(8182, 1)
+mesh = SubResource("PlaneMesh_qi3wu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_dd7my")
 
 [connection signal="body_entered" from="TRANS_intro_espada" to="TRANS_intro_espada" method="_on_body_entered"]

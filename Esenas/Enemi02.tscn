@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bkm7v43u2yyow"]
+[gd_scene load_steps=32 format=3 uid="uid://bkm7v43u2yyow"]
 
 [ext_resource type="Script" uid="uid://bb6xl01fh2obc" path="res://Codigos/character_body_2d_2.gd" id="1_mn2h5"]
 [ext_resource type="Texture2D" uid="uid://d2dja23mdkqyn" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/07-Attack/Attack 01.png" id="8_jrwl1"]
@@ -14,8 +14,20 @@
 [ext_resource type="Texture2D" uid="uid://deujpqtjsw7p0" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/09-Dead Hit/Dead Hit 03.png" id="15_kcdna"]
 [ext_resource type="Texture2D" uid="uid://bqwxds86um8da" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 04.png" id="16_5afbq"]
 [ext_resource type="Texture2D" uid="uid://c73ra0qyygwtr" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/09-Dead Hit/Dead Hit 04.png" id="16_f6knq"]
+[ext_resource type="Texture2D" uid="uid://cgsu2l2gx3u3p" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/08-Hit/Hit 01.png" id="17_6t7lr"]
 [ext_resource type="Texture2D" uid="uid://cvliveyb2y8g5" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 05.png" id="17_yst7a"]
+[ext_resource type="Texture2D" uid="uid://b4q2vbc2fscub" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/08-Hit/Hit 02.png" id="18_dl47s"]
 [ext_resource type="Texture2D" uid="uid://bt8i0ns765g66" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/02-Run/Run 06.png" id="18_oojvf"]
+[ext_resource type="Texture2D" uid="uid://b2e5rphoxh0t0" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/08-Hit/Hit 03.png" id="19_jwkgw"]
+[ext_resource type="Texture2D" uid="uid://45ynt0mchfqq" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/08-Hit/Hit 04.png" id="20_uyjhh"]
+[ext_resource type="Texture2D" uid="uid://cvf51pim412f8" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/01-Idle/Idle 01.png" id="21_ddaqd"]
+[ext_resource type="Texture2D" uid="uid://ckx352mbbwbv3" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/01-Idle/Idle 02.png" id="22_5afbq"]
+[ext_resource type="Texture2D" uid="uid://cg004yq36nnci" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/01-Idle/Idle 03.png" id="23_yst7a"]
+[ext_resource type="Texture2D" uid="uid://bhi2r5fwrhi01" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/01-Idle/Idle 04.png" id="24_oojvf"]
+[ext_resource type="Texture2D" uid="uid://b6ussu2qs7o45" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/01-Idle/Idle 05.png" id="25_c4vrd"]
+[ext_resource type="Texture2D" uid="uid://yg72wc3xn2np" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/01-Idle/Idle 06.png" id="26_8htxr"]
+[ext_resource type="Texture2D" uid="uid://cgm1bboimvg8q" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/01-Idle/Idle 07.png" id="27_kcvku"]
+[ext_resource type="Texture2D" uid="uid://crj3n87336844" path="res://Asets/ENEMIGOS.MUNDO1/ENEMIGO1/01-Idle/Idle 08.png" id="28_dhsbp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kytxb"]
 animations = [{
@@ -78,30 +90,81 @@ animations = [{
 "loop": true,
 "name": &"Muerte",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_6t7lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dl47s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jwkgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uyjhh")
+}],
+"loop": true,
+"name": &"hut",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_ddaqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5afbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_yst7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_oojvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_c4vrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8htxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_kcvku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_dhsbp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7kca"]
 size = Vector2(20, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5ixx"]
+size = Vector2(38, 17)
+
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="." groups=["Malo_1"]]
+[node name="Enemy" type="CharacterBody2D" parent="."]
 position = Vector2(610, -8)
 script = ExtResource("1_mn2h5")
 
-[node name="AnimatedSprite2Ds" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+[node name="AnimatedSprite2Ds" type="AnimatedSprite2D" parent="Enemy"]
 position = Vector2(1, 10)
 sprite_frames = SubResource("SpriteFrames_kytxb")
-animation = &"CORRER"
+animation = &"idle"
+frame_progress = 0.781229
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 position = Vector2(2, 11.5)
 shape = SubResource("RectangleShape2D_e7kca")
 
-[node name="IZQUIERDA" type="RayCast2D" parent="CharacterBody2D2"]
-position = Vector2(-8, 11)
-target_position = Vector2(-100, 0)
+[node name="PlayerDetector" type="Area2D" parent="Enemy"]
 
-[node name="DERECHA" type="RayCast2D" parent="CharacterBody2D2"]
-position = Vector2(12, 11)
-target_position = Vector2(100, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/PlayerDetector"]
+position = Vector2(3, 12.5)
+shape = SubResource("RectangleShape2D_m5ixx")
+debug_color = Color(0.967848, 0.110707, 0.36232, 0.42)
+
+[node name="AttackCooldown" type="Timer" parent="."]
