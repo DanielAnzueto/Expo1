@@ -9810,7 +9810,7 @@ shape = SubResource("RectangleShape2D_x1cgo")
 debug_color = Color(0.792595, 0.384655, 0.495846, 0.42)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(-5308, 297)
+position = Vector2(-977, 255)
 script = ExtResource("2_wtj0g")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -9913,10 +9913,10 @@ theme_override_font_sizes/font_size = 24
 text = "Tendras que superar las pruebas y encontrar a tu hermana"
 
 [node name="LabelCOLOR2" type="Label" parent="TEXTOS"]
-offset_left = 1777.0
-offset_top = -3.0
-offset_right = 2213.0
-offset_bottom = 56.0
+offset_left = 2553.0
+offset_top = 87.0
+offset_right = 2989.0
+offset_bottom = 146.0
 theme_override_fonts/font = ExtResource("11_5xxa7")
 theme_override_font_sizes/font_size = 30
 text = "Vas a ir al mundo  1,  suerte..."
@@ -9925,12 +9925,12 @@ text = "Vas a ir al mundo  1,  suerte..."
 scroll_base_offset = Vector2(0, 10)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-31, -971)
+position = Vector2(-31, -1216)
 motion_scale = Vector2(0.1, 1)
-motion_mirroring = Vector2(371.2, 0)
+motion_mirroring = Vector2(742.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_umf6p")
 centered = false
 
@@ -10070,7 +10070,7 @@ parameters/looping = true
 [node name="Plataformas" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ir1j1")
 format = 2
-layer_0/tile_data = PackedInt32Array(1179587, 1703937, 39, 1179588, 1769473, 39, 1245124, 1769473, 40, 1310660, 1769473, 41, 1179589, 1835009, 39, 1245125, 1835009, 40, 1310661, 1835009, 41, 1179590, 1900545, 39, 982987, 1703937, 39, 982988, 1769473, 39, 1048524, 1769473, 40, 1114060, 1769473, 41, 982989, 1835009, 39, 1048525, 1835009, 40, 1114061, 1835009, 41, 982990, 1900545, 39, 1376196, 1769473, 41, 1376197, 1835009, 41, 1441732, 1769473, 41, 1441733, 1835009, 41, 1507268, 1769473, 41, 1507269, 1835009, 41, 1245146, 1703937, 39, 1245147, 1769473, 39, 1310683, 1769473, 40, 1376219, 1769473, 41, 1245148, 1835009, 39, 1310684, 1835009, 40, 1376220, 1835009, 41, 1245149, 1900545, 39, 1310696, 1703937, 39, 1310697, 1769473, 39, 1376233, 1769473, 40, 1441769, 1769473, 41, 1310698, 1835009, 39, 1376234, 1835009, 40, 1441770, 1835009, 41, 1310699, 1900545, 39)
+layer_0/tile_data = PackedInt32Array(1179587, 1703937, 39, 1179588, 1769473, 39, 1245124, 1769473, 40, 1310660, 1769473, 41, 1179589, 1835009, 39, 1245125, 1835009, 40, 1310661, 1835009, 41, 1179590, 1900545, 39, 982987, 1703937, 39, 982988, 1769473, 39, 1048524, 1769473, 40, 1114060, 1769473, 41, 982989, 1835009, 39, 1048525, 1835009, 40, 1114061, 1835009, 41, 982990, 1900545, 39, 1376196, 1769473, 41, 1376197, 1835009, 41, 1441732, 1769473, 41, 1441733, 1835009, 41, 1507268, 1769473, 41, 1507269, 1835009, 41, 1245146, 1703937, 39, 1245147, 1769473, 39, 1310683, 1769473, 40, 1376219, 1769473, 41, 1245148, 1835009, 39, 1310684, 1835009, 40, 1376220, 1835009, 41, 1245149, 1900545, 39, 1310696, 1703937, 39, 1310697, 1769473, 39, 1376233, 1769473, 40, 1441769, 1769473, 41, 1310698, 1835009, 39, 1376234, 1835009, 40, 1441770, 1835009, 41, 1310699, 1900545, 39, 917492, 1703937, 39, 917493, 1769473, 39, 983029, 1769473, 40, 1048565, 1769473, 41, 1114101, 1769473, 42, 917494, 1835009, 39, 983030, 1835009, 40, 1048566, 1835009, 41, 1114102, 1835009, 42, 917495, 1900545, 39, 786431, 1703937, 39, 720896, 1769473, 39, 786432, 1769473, 40, 851968, 1769473, 41, 917504, 1769473, 42, 720897, 1835009, 39, 786433, 1835009, 40, 851969, 1835009, 41, 917505, 1835009, 42, 720898, 1900545, 39, 917512, 1703937, 39, 917513, 1769473, 39, 983049, 1769473, 40, 1048585, 1769473, 41, 1114121, 1769473, 42, 917514, 1835009, 39, 983050, 1835009, 40, 1048586, 1835009, 41, 1114122, 1835009, 42, 917515, 1900545, 39, 720913, 1835009, 39, 786450, 1835009, 42, 1114140, 1769473, 42, 1114141, 1835009, 42, 1114097, 1703937, 39, 1114098, 1769473, 39, 1179634, 1769473, 40, 1245170, 1769473, 41, 1310706, 1769473, 42, 1114099, 1835009, 39, 1179635, 1835009, 40, 1245171, 1835009, 41, 1310707, 1835009, 42, 1114100, 1900545, 39, 720911, 1703937, 39, 720912, 1769473, 39, 786448, 1769473, 40, 851984, 1769473, 41, 917520, 1769473, 42, 786449, 1835009, 40, 851985, 1835009, 41, 917521, 1835009, 42, 720914, 1900545, 39)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Plataformas"]
 position = Vector2(342, -15)
@@ -10096,6 +10096,46 @@ position = Vector2(-1444, 277)
 shape = SubResource("RectangleShape2D_1ans0")
 one_way_collision = true
 
+[node name="StaticBody2D6" type="StaticBody2D" parent="Plataformas"]
+position = Vector2(1237, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/StaticBody2D6"]
+position = Vector2(-1444, 277)
+shape = SubResource("RectangleShape2D_1ans0")
+one_way_collision = true
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Plataformas"]
+position = Vector2(1285, -62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/StaticBody2D7"]
+position = Vector2(-1444, 277)
+shape = SubResource("RectangleShape2D_1ans0")
+one_way_collision = true
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Plataformas"]
+position = Vector2(1459, -92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/StaticBody2D8"]
+position = Vector2(-1444, 277)
+shape = SubResource("RectangleShape2D_1ans0")
+one_way_collision = true
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Plataformas"]
+position = Vector2(1603, -46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/StaticBody2D9"]
+position = Vector2(-1444, 277)
+shape = SubResource("RectangleShape2D_1ans0")
+one_way_collision = true
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Plataformas"]
+position = Vector2(1717, -93)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/StaticBody2D10"]
+position = Vector2(-1444, 277)
+shape = SubResource("RectangleShape2D_1ans0")
+one_way_collision = true
+
 [node name="StaticBody2D5" type="StaticBody2D" parent="Plataformas"]
 position = Vector2(1098, -48)
 
@@ -10115,6 +10155,21 @@ position = Vector2(-277, 308)
 
 [node name="Enemeigo_flotante4" parent="." instance=ExtResource("29_l62hp")]
 position = Vector2(-468, 228)
+
+[node name="Enemeigo_flotante5" parent="." instance=ExtResource("29_l62hp")]
+position = Vector2(-46, 234)
+
+[node name="Enemeigo_flotante6" parent="." instance=ExtResource("29_l62hp")]
+position = Vector2(72, 262)
+
+[node name="Enemeigo_flotante7" parent="." instance=ExtResource("29_l62hp")]
+position = Vector2(254, 281)
+
+[node name="Enemeigo_flotante8" parent="." instance=ExtResource("29_l62hp")]
+position = Vector2(371, 246)
+
+[node name="Enemeigo_flotante9" parent="." instance=ExtResource("29_l62hp")]
+position = Vector2(504, 287)
 
 [connection signal="body_entered" from="CAMBIOecenario" to="CAMBIOecenario" method="_on_body_entered"]
 [connection signal="area_entered" from="CharacterBody2D/HitBox" to="CharacterBody2D" method="_on_hit_box_area_entered"]

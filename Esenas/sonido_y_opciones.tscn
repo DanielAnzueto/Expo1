@@ -84,7 +84,7 @@ text = "ATRAS"
 layout_mode = 2
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_7fpeg")
-text = "Creado por Daniel Anzueto, Kenny Alvarez y Manuel Barquin."
+text = "Creado por Daniel Anzueto y Kenny Alvarez"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_aqofg")

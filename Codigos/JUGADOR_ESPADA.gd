@@ -113,7 +113,6 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 	area.get_parent().get_parent().queue_free()
 	
 	
-
 func roling():
 	if rolingg:
 		return

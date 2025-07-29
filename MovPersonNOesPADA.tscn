@@ -6195,7 +6195,7 @@ height = 213.995
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(-4441, 328)
+position = Vector2(-3995, 300)
 script = ExtResource("1_cltp8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -6240,7 +6240,7 @@ script = ExtResource("8_eckya")
 next_scene_path = "res://Ecena2Prueba.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CAMBIOecenario"]
-position = Vector2(2058, 315)
+position = Vector2(-459, 314)
 shape = SubResource("RectangleShape2D_36u7j")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -6296,7 +6296,7 @@ offset_right = 3025.0
 offset_bottom = -19.0
 theme_override_fonts/font = ExtResource("11_62x3e")
 theme_override_font_sizes/font_size = 24
-text = "Cada piedra, te
+text = "Cada piedra o arbustp, te
 transportara a tu destino..."
 
 [node name="LabelCOLOR6" type="Label" parent="TEXTOS"]

@@ -19220,6 +19220,33 @@ size = Vector2(46, 2)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sagxe"]
 size = Vector2(90, 58)
 
+[sub_resource type="Animation" id="Animation_nwvpq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("48_v1d5q")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1883, 183)]
+}
+
 [sub_resource type="Animation" id="Animation_1maxw"]
 resource_name = "arribaAbajo"
 length = 0.8
@@ -19249,7 +19276,13 @@ tracks/1/keys = {
 "values": [Vector2(1883, 183), Vector2(1883, 200), Vector2(1883, 176)]
 }
 
-[sub_resource type="Animation" id="Animation_nwvpq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sj8lb"]
+_data = {
+&"RESET": SubResource("Animation_nwvpq"),
+&"arribaAbajo": SubResource("Animation_1maxw")
+}
+
+[sub_resource type="Animation" id="Animation_vumic"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -19261,7 +19294,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("48_v1d5q")]
+"values": [ExtResource("75_27pd7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -19273,13 +19306,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1883, 183)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sj8lb"]
-_data = {
-&"RESET": SubResource("Animation_nwvpq"),
-&"arribaAbajo": SubResource("Animation_1maxw")
+"values": [Vector2(1971, 265)]
 }
 
 [sub_resource type="Animation" id="Animation_1sit1"]
@@ -19309,33 +19336,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1971, 266), Vector2(1971, 265)]
-}
-
-[sub_resource type="Animation" id="Animation_vumic"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("75_27pd7")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1971, 265)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hhj1n"]
@@ -19656,7 +19656,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2359285, 262148, 10, 2424821, 262148, 10)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(11781, 191)
+position = Vector2(-2428, -153)
 script = ExtResource("17_27pd7")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -19923,6 +19923,13 @@ offset_right = 15593.0
 offset_bottom = -13.0
 theme_override_fonts/font = ExtResource("33_8740i")
 text = "AGUA"
+
+[node name="Label4" type="Label" parent="TEXTOS"]
+offset_left = 14069.0
+offset_top = -30.0
+offset_right = 14375.0
+offset_bottom = -7.0
+text = "\"No fue solo un viaje... fue una lección.\""
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_ysp5w")
@@ -20460,6 +20467,17 @@ libraries = {
 }
 autoplay = "arribaAbajo"
 
+[node name="el bro2" type="Sprite2D" parent="DECORACION_BASURA"]
+position = Vector2(1883, 183)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("48_v1d5q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DECORACION_BASURA/el bro2"]
+libraries = {
+&"": SubResource("AnimationLibrary_sj8lb")
+}
+autoplay = "arribaAbajo"
+
 [node name="CALAVERA7" type="Sprite2D" parent="DECORACION_BASURA"]
 position = Vector2(1715, 268)
 scale = Vector2(0.08, 0.08)
@@ -20471,6 +20489,17 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("75_27pd7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DECORACION_BASURA/PAJARO"]
+libraries = {
+&"": SubResource("AnimationLibrary_hhj1n")
+}
+autoplay = "pajaro"
+
+[node name="PAJARO2" type="Sprite2D" parent="DECORACION_BASURA"]
+position = Vector2(1971, 265)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("75_27pd7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DECORACION_BASURA/PAJARO2"]
 libraries = {
 &"": SubResource("AnimationLibrary_hhj1n")
 }
